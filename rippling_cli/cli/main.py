@@ -48,7 +48,7 @@ def initialize_cli() -> None:
         # Add the commands to the CLI
         cli.add_command(command)
 
-print("Inside main.py")
+print(f"Inside main.py {__name__}")
 
 
 exit_code = 0
