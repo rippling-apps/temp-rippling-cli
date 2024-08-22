@@ -6,6 +6,6 @@ setup(
     packages=['rippling_cli'],
     entry_points={
         'console_scripts': [
-            'rippling-cli=rippling_cli.cli.main'
+            'rippling-cli=rippling_cli.cli.main:__main__'
         ]
     })
