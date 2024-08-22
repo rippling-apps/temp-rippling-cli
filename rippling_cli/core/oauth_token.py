@@ -63,7 +63,7 @@ class OAuthToken:
             raise TimeoutError("Authorization code not received within the timeout period.")
 
     def run_server(self):
-        with socketserver.TCPServer(("127.0.0.1", 2647),
+        with socketserver.TCPServer(("127.0.0.1", 2000),
                                     lambda *args, **kwargs: self.OAuthTokenRequestHandler(*args, **kwargs,
                                                                                           token=self)) as httpd:
             self.httpd = httpd
