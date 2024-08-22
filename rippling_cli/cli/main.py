@@ -53,6 +53,7 @@ if __name__ == "__main__":
     exit_code = 0
     try:
         initialize_cli()
+        print("Commands registered: ", cli.commands)
         cli()
     except Exception as e:
         raise e
