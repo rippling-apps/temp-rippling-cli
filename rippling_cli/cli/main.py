@@ -23,7 +23,6 @@ def cli(ctx):
     the Rippling CLI allow both first-party and third-party App developers to create, manage and deploy
     Rippling-hosted integrations.
     """
-    print("Commands registered: ", cli.commands)
     # Initialize the context object
     ctx.obj = RipplingContext()
 
@@ -48,13 +47,13 @@ def initialize_cli() -> None:
         # Add the commands to the CLI
         cli.add_command(command)
 
-print(f"Inside main.py {__name__}")
 
-
-exit_code = 0
-try:
-    initialize_cli()
-    print("Commands registered: ", cli.commands)
-    cli()
-except Exception as e:
-    raise e
+if __name__ == "__main__" or __name__ == "rippling_cli.cli.main":
+    exit_code = 0
+    try:
+        initialize_cli()
+        cli()
+    except Exception:
+        exit_code = EXIT_UNKNOWN_EXCEPTION
+    finally:
+        sys.exit(exit_code)
