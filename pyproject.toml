@@ -22,4 +22,4 @@ pytest = "^7.2.1"
 mypy = "^1.7.1"
 
 [tool.poetry.scripts]
-rippling = "rippling_cli.cli.main:cli"
+rippling-cli = "rippling_cli.cli.main:cli"
